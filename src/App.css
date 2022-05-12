@@ -8,7 +8,7 @@ html,
 body,
 #root {
   width: 100vw;
-  height: 100vh;
+  height: 90vh;
   margin: 0;
   padding: 0;
   -webkit-touch-callout: none;
@@ -18,7 +18,7 @@ body,
   -ms-user-select: none;
   user-select: none;
   /* overflow: hidden; */
-  background: #272727;
+  background: #021020;
 }
 
 body {
