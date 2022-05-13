@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 import './App.css';
 
 import Navbar from './Components/Navbar/navbar.js';
+import Infocard from './Components/Infocard/infocard.js'
 
 import {Canvas, useLoader, useFrame} from '@react-three/fiber';
 import { TextureLoader } from 'three/src/loaders/TextureLoader';
@@ -86,6 +87,7 @@ function App() {
     <>
       <div className='parent'> Hello world
         <Scene />
+        <Infocard />
         <Navbar />
       </div>
     </>
