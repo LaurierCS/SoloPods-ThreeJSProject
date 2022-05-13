@@ -33,8 +33,8 @@ function Scene(props){
   return(
     <Canvas>
       <OrbitControls autoRotate autoRotateSpeed={0.05}/>
-      <ambientLight intensity={0.5}/>
-      <spotLight position={[10, 15, 10]} angle={3} intensity={2} />
+      <ambientLight intensity={0.03}/>
+      <spotLight position={[10, 15, 10]} angle={2} intensity={1} />
       <Stars />
       <Planet properties={planets.mercury} />
       <Planet properties={planets.venus} />
