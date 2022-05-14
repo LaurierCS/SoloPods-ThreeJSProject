@@ -18,7 +18,7 @@ body,
     -ms-user-select: none;
     user-select: none;
     /* overflow: hidden; */
-    background: #031f3f;
+    background: linear-gradient(black, rgb(2, 14, 24), black);
 }
 
 body {
@@ -69,7 +69,7 @@ body {
 .body1 {
     font-family: "Lato";
     font-style: normal;
-    font-weight: 300;
+    font-weight: 400;
     font-size: 15px;
     line-height: 30px;
     /* identical to box height, or 200% */
@@ -179,4 +179,26 @@ body {
 // ------------------------------------
 
 .infoCard {
+    position: absolute;
+    top: calc(50% - 30vh);
+    left: calc(50% - 25vw);
+    width: 25vw;
+    height: 60vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    color: white;
+    // border: solid red 2px;
+    padding: 0 0 20px 0;
+    border-right: solid white 1px;
+
+    > .header1 {
+        border-bottom: solid white 1px;
+    }
+}
+
+.stat--large {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
 }

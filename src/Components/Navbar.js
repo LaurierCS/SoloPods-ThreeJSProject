@@ -36,7 +36,7 @@ function Navbar(props){
             {/* <PlanetToggle icon={arrow_left} direction={"left"} planet={props.last_planet}/> */}
             <div className="footer">
                 <SmallStat {...stat1} direction={"left"} />
-                <div className="header2">Mars</div>
+                <div className="header1">Mars</div>
                 <SmallStat {...stat2} direction={"right"} />
             </div>
             <PlanetToggle icon={arrow_right} direction={"right"} />

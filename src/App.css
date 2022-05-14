@@ -17,7 +17,8 @@ body,
   -ms-user-select: none;
   user-select: none;
   /* overflow: hidden; */
-  background: #031f3f;
+  background: -webkit-gradient(linear, left top, left bottom, from(black), color-stop(#020e18), to(black));
+  background: linear-gradient(black, #020e18, black);
 }
 
 body {
@@ -64,7 +65,7 @@ body {
 .body1 {
   font-family: "Lato";
   font-style: normal;
-  font-weight: 300;
+  font-weight: 400;
   font-size: 15px;
   line-height: 30px;
   /* identical to box height, or 200% */
@@ -198,5 +199,43 @@ body {
 .stat--small.left .body1,
 .stat--small.left .body2 {
   text-align: right;
+}
+
+.infoCard {
+  position: absolute;
+  top: calc(50% - 30vh);
+  left: calc(50% - 25vw);
+  width: 25vw;
+  height: 60vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  color: white;
+  padding: 0 0 20px 0;
+  border-right: solid white 1px;
+}
+
+.infoCard > .header1 {
+  border-bottom: solid white 1px;
+}
+
+.stat--large {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
 }
 /*# sourceMappingURL=App.css.map */
