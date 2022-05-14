@@ -1,8 +1,8 @@
 import React, {useRef, useState } from 'react';
 import ReactDOM from 'react-dom';
-import '../../App.css';
-import arrow_left from '../../images/icons/arrow_left.png';
-import arrow_right from '../../images/icons/arrow_right.png';
+import '../App.css';
+import arrow_left from '../images/icons/arrow_left.png';
+import arrow_right from '../images/icons/arrow_right.png';
 
 function PlanetToggle(props){
     return(
