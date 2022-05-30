@@ -2,91 +2,51 @@ import React, {useRef, useState } from 'react';
 import ReactDOM from 'react-dom';
 import './App.css';
 
-import Navbar from './Components/Navbar/navbar.js';
+import Scene from './Components/Scene/Scene.js';
+import Navbar from './Components/Navbar.js';
+import InfoCard from './Components/InfoCard.js';
 
-import {Canvas, useLoader, useFrame} from '@react-three/fiber';
-import { TextureLoader } from 'three/src/loaders/TextureLoader';
-import { OrbitControls, Stars, useTexture } from '@react-three/drei';
-
-
-function Planet(props) {
-
-  const textures = useTexture(props.properties.textures);
-
-  const myMesh = useRef();
-  const [click, setClick] = useState(false);
-
-  useFrame(({ clock }) => {
-    const a = clock.getElapsedTime();
-    myMesh.current.rotation.y = a/40;
+// Nasa Api
+// My Api Key - AojNQfezQHH0T0KZEmqoWCmN0sAB95aHQNZ8m8cQ
+// Account Email: straightup.stack@gmail.com
+// Account ID: b5926556-37db-45fe-81b4-dcb6f9430111
+// Usage: https://api.nasa.gov/planetary/apod?api_key=AojNQfezQHH0T0KZEmqoWCmN0sAB95aHQNZ8m8cQ
+function getPlanetApiData(){
+  // This code stores the planet json in localstorage if its not already there
+  // This reduces the number of api calls made and trivially is faster for
+  if (localStorage.getItem('planetaryData') == null){
+      
+    fetch('https://api.le-systeme-solaire.net/rest/bodies/')
+    .then(response => {
+      return response.json()
+    })
+    .then(data => {
+      // console.log(data);
+      planetaryData = data;
+      window.localStorage.setItem('planetaryData', JSON.stringify(planetaryData));
+    });
+  }
+  
+  var planetaryData = JSON.parse(localStorage.getItem('planetaryData'));
+  planetaryData = planetaryData.bodies.filter((planet) => {
+    return planet.isPlanet == true;
   });
+  console.log(planetaryData);
 
-  return (
-    <mesh ref={myMesh} {...props.properties.meshProperties}>
-      <sphereBufferGeometry attach = "geometry"/>
-      <meshStandardMaterial attach="material" {...textures}/>
-    </mesh>
-  )
+  return (planetaryData);
 }
 
-function Scene(props){
-  return(
-    <Canvas>
-      <OrbitControls autoRotate autoRotateSpeed={0.05}/>
-      <ambientLight intensity={0.5}/>
-      <spotLight position={[10, 15, 10]} angle={3} intensity={2} />
-      <Stars />
-      <Planet properties={planets.mercury} />
-      <Planet properties={planets.venus} />
-      <Planet properties={planets.mars} />
-      <Planet properties={planets.earth} />
-      {/* <Planet />
-      <Planet /> */}
-    </Canvas>
-  )
-}
 
-const planets = { 
-  mercury: {
-    textures:{
-      map: "Mercury_Map.jpg",
-    },
-    meshProperties: {
-      position: [0, 0, 0]
-    }
-  },
-  venus: {
-    textures:{
-      map: "Venus_Map.jpg",
-    },
-    meshProperties: {
-      position: [3, 0, 0]
-    }
-  },
-  mars: {
-    textures:{
-      map: "Mars_Map.jpg",
-    },
-    meshProperties: {
-      position: [6, 0, 0]
-    }
-  },
-  earth: {
-    textures:{
-      map: "Earth_Map.jpg",
-    },
-    meshProperties: {
-      position: [9, 0, 0]
-    }
-  },
-};
+const planetaryData = getPlanetApiData();
+// console.log(planetaryData);
 
 function App() {
   return (
     <>
       <div className='parent'> Hello world
         <Scene />
-        <Navbar />
+        {/* <InfoCard /> */}
+        {/* <Navbar /> */}
       </div>
     </>
   );

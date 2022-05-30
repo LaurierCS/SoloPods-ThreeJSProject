@@ -1,7 +1,7 @@
-@import url('https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700&display=swap');
-   
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700&display=swap");
 * {
-  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
 }
 
 html,
@@ -13,101 +13,229 @@ body,
   padding: 0;
   -webkit-touch-callout: none;
   -webkit-user-select: none;
-  -khtml-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
   /* overflow: hidden; */
-  background: #031f3f;
+  background: -webkit-gradient(linear, left top, left bottom, from(black), color-stop(#020e18), to(black));
+  background: linear-gradient(black, #020e18, black);
 }
 
 body {
-  font-family: -apple-system, BlinkMacSystemFont, avenir next, avenir, helvetica neue, helvetica, ubuntu, roboto, noto,
-    segoe ui, arial, sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, avenir next, avenir, helvetica neue, helvetica, ubuntu, roboto, noto, segoe ui, arial, sans-serif;
 }
 
 .parent {
   width: 100%;
   height: 100%;
-  color: green;
+  /* color: green; */
+  color: white;
 }
 
-.header1{
-  font-family: 'Lato';
+.header1 {
+  font-family: "Lato";
   font-style: normal;
   font-weight: 300;
   font-size: 50px;
   line-height: 76px;
   /* identical to box height, or 151% */
-
   letter-spacing: 0.5px;
 }
 
-.header2{
-  font-family: 'Lato';
+.header2 {
+  font-family: "Lato";
   font-style: normal;
   font-weight: 275;
   font-size: 50px;
   line-height: 65px;
   /* identical to box height, or 130% */
-
   letter-spacing: 0.5px;
 }
-.header3{
-  font-family: 'Lato';
+
+.header3 {
+  font-family: "Lato";
   font-style: normal;
   font-weight: 250;
   font-size: 30px;
   line-height: 40px;
   /* identical to box height, or 133% */
-
   letter-spacing: 0.5px;
 }
 
-.body1{
-  font-family: 'Lato';
+.body1 {
+  font-family: "Lato";
   font-style: normal;
   font-weight: 400;
   font-size: 15px;
-  line-height: 40px;
+  line-height: 30px;
   /* identical to box height, or 200% */
-  
   letter-spacing: 0.5px;
 }
-.body2{
-  font-family: 'Lato';
+
+.body2 {
+  font-family: "Lato";
   font-style: normal;
   font-weight: 300;
   font-size: 15px;
-  line-height: 32px;
+  line-height: 30px;
   /* identical to box height, or 188% */
-  
   letter-spacing: 0.5px;
 }
 
-
 /* NAVBAR */
-.navbar{
+.navbar {
   position: absolute;
   bottom: 0;
-
   width: 100%;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
   height: fit-content;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  border: solid 10px green;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding: 0 0 20px;
 }
 
-.toggle{
-  flex: 1;
-
-}
-
-.details{
-  flex: 2;
+.toggle {
+  -webkit-box-flex: 2;
+      -ms-flex: 2;
+          flex: 2;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
+
+.toggle:hover {
+  cursor: pointer;
+  color: #00e1ff;
+}
+
+.toggle.right {
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+}
+
+.toggle.left {
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+}
+
+.toggle img {
+  padding: 0 15px 0 15px;
+}
+
+.toggle .header3 {
+  margin: 0 5px 0 5px;
+}
+
+.footer {
+  -webkit-box-flex: 4;
+      -ms-flex: 4;
+          flex: 4;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.footer .header2 {
+  margin: 0 5% 0 5%;
+}
+
+.stat--small {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  color: rgba(255, 255, 255, 0.449);
+}
+
+.stat--small > * {
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+}
+
+.stat--small .body2 {
+  border-top: solid white 0.5px;
+}
+
+.stat--small.right .body1,
+.stat--small.right .body2 {
+  text-align: left;
+}
+
+.stat--small.left .body1,
+.stat--small.left .body2 {
+  text-align: right;
+}
+
+.infoCard {
+  position: absolute;
+  top: calc(50% - 30vh);
+  left: calc(50% - 25vw);
+  width: 25vw;
+  height: 60vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  color: white;
+  padding: 0 0 20px 0;
+  border-right: solid white 1px;
+}
+
+.infoCard > .header1 {
+  border-bottom: solid white 1px;
+}
+
+.stat--large {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+}
+/*# sourceMappingURL=App.css.map */
