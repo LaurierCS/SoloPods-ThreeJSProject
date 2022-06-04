@@ -45,8 +45,6 @@ function App() {
     <>
       <div className='parent'> Hello world
         <Scene />
-        {/* <InfoCard /> */}
-        {/* <Navbar /> */}
       </div>
     </>
   );

@@ -64,7 +64,7 @@ function Scene(props){
         <spotLight position={[10, 15, 10]} angle={2} intensity={1} />
         <Stars radius={100} depth={30} count={5000} factor={6} saturation={0} fade speed={1} />
         <Suspense fallback={null}>
-          <Bounds fit clip observe margin={1.2}>
+          <Bounds fit clip observe margin={0.5}>
             <SelectToZoom>
               <Planet properties={planets.sun} />
               <Planet properties={planets.mercury} />
@@ -74,8 +74,6 @@ function Scene(props){
             </SelectToZoom>
           </Bounds>
         </Suspense>
-        {/* <Planet />
-        <Planet /> */}
       </Canvas>
     )
   }
